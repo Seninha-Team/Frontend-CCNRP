@@ -49,6 +49,43 @@ function App() {
       .catch(err => console.log(err));
   };
 
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>Controle de Peças de Carro</h1>
+
+      <div style={styles.form}>
+        <input 
+          placeholder="Nome da peça" 
+          value={nome} 
+          onChange={e => setNome(e.target.value)} 
+          style={styles.input}
+        />
+        <input 
+          placeholder="Quantidade" 
+          type="number"
+          value={quantidade} 
+          onChange={e => setQuantidade(e.target.value)} 
+          style={styles.input}
+        />
+        <button onClick={adicionarPeca} style={styles.addButton}>Adicionar</button>
+      </div>
+
+      <ul style={styles.list}>
+        {pecas.map(p => (
+          <li key={p.id} style={styles.listItem}>
+            <div>
+              <b>{p.nome}</b> - Quantidade: {p.quantidade}
+            </div>
+            <div>
+              <button onClick={() => atualizarPeca(p)} style={styles.editButton}>Editar</button>
+              <button onClick={() => deletarPeca(p.id)} style={styles.deleteButton}>Deletar</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
 };
 export default App;
   
