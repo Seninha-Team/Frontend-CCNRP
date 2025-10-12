@@ -19,6 +19,17 @@ function App() {
     listarPecas();
   }, []);
 
+  const adicionarPeca = () => {
+    if (!nome || !quantidade) return alert("Preencha o nome da peça e a quantidade!");
+    axios.post(API_URL, { nome, quantidade: Number(quantidade) })
+      .then(res => {
+        setPecas([...pecas, res.data]);
+        setNome('');
+        setQuantidade('');
+      })
+      .catch(err => console.log(err));
+  };
+
 };
 export default App;
   
