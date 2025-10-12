@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// Componente
 function App() {
   const [pecas, setPecas] = useState([]);
   const [nome, setNome] = useState('');
@@ -9,12 +8,11 @@ function App() {
 
   const API_URL = 'http://localhost:3001/pecas';
 
-
   const listarPecas = () => {
     axios.get(API_URL)
       .then(res => setPecas(res.data))
       .catch(err => console.log(err));
- };
+  };
 
   useEffect(() => {
     listarPecas();
@@ -85,7 +83,76 @@ function App() {
       </ul>
     </div>
   );
+}
 
+// Estilos em JS
+const styles = {
+  container: {
+    padding: '40px',
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    backgroundColor: '#f4f6f8',
+    minHeight: '100vh'
+  },
+  title: {
+    textAlign: 'center',
+    color: '#333',
+    marginBottom: '30px'
+  },
+  form: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '30px',
+    gap: '10px'
+  },
+  input: {
+    padding: '10px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    minWidth: '150px'
+  },
+  addButton: {
+    padding: '10px 20px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#28a745',
+    color: 'white',
+    cursor: 'pointer',
+    fontWeight: 'bold'
+  },
+  list: {
+    maxWidth: '600px',
+    margin: '0 auto',
+    padding: 0,
+    listStyle: 'none'
+  },
+  listItem: {
+    backgroundColor: 'white',
+    padding: '15px 20px',
+    marginBottom: '10px',
+    borderRadius: '8px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
+  },
+  editButton: {
+    padding: '5px 10px',
+    marginRight: '5px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#ffc107',
+    color: 'white',
+    cursor: 'pointer'
+  },
+  deleteButton: {
+    padding: '5px 10px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#dc3545',
+    color: 'white',
+    cursor: 'pointer'
+  }
 };
+
 export default App;
   
