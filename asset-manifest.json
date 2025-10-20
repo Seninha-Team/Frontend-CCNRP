@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Frontend-CCNRP/static/css/main.e6c13ad2.css",
+    "main.js": "/Frontend-CCNRP/static/js/main.2ce6fe0a.js",
+    "static/js/453.d7446e4a.chunk.js": "/Frontend-CCNRP/static/js/453.d7446e4a.chunk.js",
+    "index.html": "/Frontend-CCNRP/index.html",
+    "main.e6c13ad2.css.map": "/Frontend-CCNRP/static/css/main.e6c13ad2.css.map",
+    "main.2ce6fe0a.js.map": "/Frontend-CCNRP/static/js/main.2ce6fe0a.js.map",
+    "453.d7446e4a.chunk.js.map": "/Frontend-CCNRP/static/js/453.d7446e4a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.2ce6fe0a.js"
+  ]
+}
