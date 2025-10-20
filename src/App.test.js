@@ -1,7 +1,9 @@
+import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 import App from './App';
+import '@testing-library/jest-dom';
 
 // Mock do axios
 jest.mock('axios');
@@ -192,4 +194,10 @@ describe('App Component', () => {
     
     consoleSpy.mockRestore();
   });
+});
+
+test('renders header with CCNRP text', () => {
+  render(<App />);
+  const title = screen.getByText(/CCNRP/i);
+  expect(title).toBeInTheDocument();
 });
